@@ -16,6 +16,7 @@
     "translations": "node ./scripts/translations.js"
   },
   "dependencies": {
+    "@mtps/pdengine": "^0.1.10",
     "@sentry/browser": "^6.18.1",
     "core-js": "^3.21.1",
     "date-fns": "^2.28.0",

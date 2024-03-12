@@ -85,6 +85,9 @@ const config = {
   stats: {
     warnings: false,
   },
+  devServer: {
+    allowedHosts: "all"
+  },
 };
 
 if (isProduction) {
