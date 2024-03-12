@@ -7,7 +7,7 @@ import { Props, defaultData } from "./types";
 const PeriodTimerSettings: FC<Props> = ({ data = defaultData, setData }) => {
   const [schedules, setSchedules] = useState<ScheduleListing[] | null>(null);
   const engine: Engine = new Engine();
-  const {schedule, showClass} = data
+  const {schedule, showClass, live} = data
   useEffect(() => {
     console.log("mounting (?)")
     engine.getAllSchedules().then((s) => {
@@ -40,6 +40,14 @@ const PeriodTimerSettings: FC<Props> = ({ data = defaultData, setData }) => {
           onChange={() => setData({ ...data, showClass: !showClass })}
         />
         Show class?
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          checked={live}
+          onChange={() => setData({ ...data, live: !live })}
+        />
+        Use Live Schedule
       </label>
     </div>
   )
